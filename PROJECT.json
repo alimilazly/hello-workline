@@ -1,0 +1,24 @@
+﻿{
+  "schema_version": 1,
+  "project": {
+    "id": "hello-workline",
+    "display_name": "Hello Workline",
+    "description": "Acceptance project for the Workline framework"
+  },
+  "repository": {
+    "provider": "github",
+    "remote_url": "",
+    "default_branch": "main"
+  },
+  "workflow": {
+    "planner": "codex",
+    "executor": "antigravity",
+    "reviewer": "codex"
+  },
+  "policy": {
+    "require_tests": true,
+    "require_review": true,
+    "allow_direct_main_development": false,
+    "default_repository_visibility": "private"
+  }
+}

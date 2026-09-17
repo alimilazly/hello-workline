@@ -1,0 +1,31 @@
+﻿{
+    "schema_version":  1,
+    "project_status":  "active",
+    "stage":  "initialized",
+    "active_task":  null,
+    "next_task_number":  1,
+    "execution":  {
+                      "branch":  null,
+                      "worktree_mode":  null,
+                      "worktree_path":  null,
+                      "executor":  null
+                  },
+    "verification":  {
+                         "build":  "not_run",
+                         "unit_test":  "not_run",
+                         "integration_test":  "not_run",
+                         "runtime_test":  "not_run",
+                         "regression_test":  "not_run",
+                         "ci":  "not_run"
+                     },
+    "review":  {
+                   "status":  "not_started",
+                   "reviewer":  null,
+                   "pull_request":  null
+               },
+    "blocked":  [
+
+                ],
+    "next_action":  "Create or plan a task.",
+    "updated_at":  "2026-09-17T14:41:06Z"
+}

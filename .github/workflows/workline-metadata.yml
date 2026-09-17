@@ -1,0 +1,47 @@
+name: Workline Metadata Validation
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate PROJECT.json
+        run: |
+          echo "Checking PROJECT.json..."
+          python3 -c "import json; json.load(open('PROJECT.json'))"
+          echo "PROJECT.json: VALID"
+
+      - name: Validate STATE.json
+        run: |
+          echo "Checking STATE.json..."
+          python3 -c "import json; json.load(open('STATE.json'))"
+          echo "STATE.json: VALID"
+
+      - name: Check required control files
+        run: |
+          REQUIRED_FILES="AGENTS.md PROJECT.json STATE.json README.md docs/index.md docs/ARCHITECTURE.md"
+          ALL_PASS=true
+          for f in $REQUIRED_FILES; do
+            if [ -f "$f" ]; then
+              echo "PASS: $f exists"
+            else
+              echo "FAIL: $f missing"
+              ALL_PASS=false
+            fi
+          done
+          if [ "$ALL_PASS" = false ]; then
+            exit 1
+          fi
+
+      - name: Check for unresolved template placeholders
+        run: |
+          if grep -r '{{' --include='*.json' --include='*.md' . 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "WARNING: Possible unresolved template placeholders found"
+            exit 1
+          else
+            echo "PASS: No unresolved placeholders"
+          fi

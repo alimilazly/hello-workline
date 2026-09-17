@@ -1,4 +1,4 @@
-﻿# TASK-0001-add-greeting-program
+# TASK-0001-add-greeting-program
 
 ## Task ID
 TASK-0001-add-greeting-program
@@ -7,25 +7,28 @@ TASK-0001-add-greeting-program
 Add greeting program
 
 ## Requested Outcome
-(Describe the desired outcome.)
+Create the smallest reasonable program that prints "Hello from Workline" to validate the Workline task lifecycle.
 
 ## User Context
-(Provide context about why this task is needed.)
+This is the framework acceptance task. The goal is to validate that the full Workline lifecycle (create → plan → execute → review → complete) works correctly.
 
 ## Functional Requirements
-- (List functional requirements)
+- A program that prints "Hello from Workline" to stdout.
 
 ## Non-Functional Requirements
-- (List non-functional requirements)
+- Use a stack already present on the machine (PowerShell).
+- No external dependencies.
 
 ## Explicit Non-Goals
-- (List what this task should NOT do)
+- No complex application logic.
+- No external toolchain installation.
 
 ## Constraints
-- (List constraints)
+- Must use PowerShell (already available).
 
 ## User Acceptance Expectations
-- (List what the user expects to see when complete)
+- Running the program outputs "Hello from Workline".
+- Task lifecycle completes end-to-end.
 
 ## Open Questions
-- (List any open questions)
+- None.

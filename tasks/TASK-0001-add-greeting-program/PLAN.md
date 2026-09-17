@@ -1,31 +1,31 @@
-﻿# TASK-0001-add-greeting-program 鈥?Plan
+# TASK-0001-add-greeting-program — Plan
 
 ## Task Goal
-(To be filled by Codex during planning.)
+Create a minimal PowerShell script that prints "Hello from Workline" to validate the Workline framework task lifecycle.
 
 ## Current Repository Situation
-(Analyze the repository.)
+Fresh project initialized with Workline template. No application code exists yet.
 
 ## Affected Components
-(List affected components.)
+- `src/` — new greeting script
 
 ## Design
-(Describe the design.)
+A single PowerShell script `src/hello.ps1` that writes "Hello from Workline" to stdout.
 
 ## Files Expected to Change
-(List files.)
+- `src/hello.ps1` (NEW)
 
 ## Dependencies
-(List dependencies.)
+- PowerShell (built-in)
 
 ## Security Considerations
-(Note any security considerations.)
+None — no external access, no secrets.
 
 ## Risks
-(List risks.)
+Minimal — trivial implementation.
 
 ## Rollback Strategy
-(Describe rollback strategy.)
+Delete `src/hello.ps1` and revert the commit.
 
 ## Decision Points
-(List decision points.)
+None.

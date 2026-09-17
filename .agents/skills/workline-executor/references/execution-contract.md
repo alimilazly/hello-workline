@@ -20,6 +20,8 @@ Preferred execution mode is **New Worktree**:
 
 If Antigravity creates a worktree branch with a different name than planned:
 - Record the actual branch name in `STATE.json`.
+- Set `execution.worktree_mode` to `new-worktree`.
+- Record the absolute active worktree path in `execution.worktree_path`.
 - Do not force destructive renaming.
 - Ensure the eventual PR still targets `main`.
 

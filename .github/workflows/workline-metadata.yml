@@ -9,39 +9,63 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate PROJECT.json
+      - name: Validate Workline control data
+        shell: bash
         run: |
-          echo "Checking PROJECT.json..."
-          python3 -c "import json; json.load(open('PROJECT.json'))"
-          echo "PROJECT.json: VALID"
+          python3 - <<'PY'
+          import json
+          import pathlib
+          import re
+          import sys
 
-      - name: Validate STATE.json
-        run: |
-          echo "Checking STATE.json..."
-          python3 -c "import json; json.load(open('STATE.json'))"
-          echo "STATE.json: VALID"
+          root = pathlib.Path('.')
+          required_files = [
+              'AGENTS.md', 'PROJECT.json', 'STATE.json', 'README.md',
+              'docs/index.md', 'docs/ARCHITECTURE.md', 'docs/ROADMAP.md',
+              'docs/CHANGELOG.md', 'docs/decisions/README.md',
+              'docs/decisions/ADR-TEMPLATE.md',
+              '.agents/skills/workline-executor/SKILL.md',
+              '.agents/skills/workline-executor/references/execution-contract.md',
+          ]
+          required_dirs = ['tasks', 'src', 'tests', 'docs/generated']
+          problems = []
+          for rel in required_files:
+              if not (root / rel).is_file(): problems.append(f'missing file: {rel}')
+          for rel in required_dirs:
+              if not (root / rel).is_dir(): problems.append(f'missing directory: {rel}')
 
-      - name: Check required control files
-        run: |
-          REQUIRED_FILES="AGENTS.md PROJECT.json STATE.json README.md docs/index.md docs/ARCHITECTURE.md"
-          ALL_PASS=true
-          for f in $REQUIRED_FILES; do
-            if [ -f "$f" ]; then
-              echo "PASS: $f exists"
-            else
-              echo "FAIL: $f missing"
-              ALL_PASS=false
-            fi
-          done
-          if [ "$ALL_PASS" = false ]; then
-            exit 1
-          fi
+          try:
+              project = json.loads((root / 'PROJECT.json').read_text(encoding='utf-8-sig'))
+              state = json.loads((root / 'STATE.json').read_text(encoding='utf-8-sig'))
+          except Exception as exc:
+              problems.append(f'invalid JSON: {exc}')
+              project, state = {}, {}
 
-      - name: Check for unresolved template placeholders
-        run: |
-          if grep -r '{{' --include='*.json' --include='*.md' . 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
-            echo "WARNING: Possible unresolved template placeholders found"
-            exit 1
-          else
-            echo "PASS: No unresolved placeholders"
-          fi
+          project_id = project.get('project', {}).get('id', '')
+          if not re.fullmatch(r'[a-z0-9][a-z0-9-]*', project_id):
+              problems.append('PROJECT.json project.id is invalid')
+          required_state = {'schema_version','project_status','stage','active_task','next_task_number','execution','verification','review','blocked','next_action','updated_at'}
+          if not required_state.issubset(state):
+              problems.append('STATE.json is missing required fields')
+
+          active = state.get('active_task')
+          if active:
+              if not re.fullmatch(r'TASK-\d{4}-[a-z0-9-]+', active):
+                  problems.append('active_task has an invalid identifier')
+              task = root / 'tasks' / active
+              for name in ['REQUEST.md','PLAN.md','EXECUTION.md','ACCEPTANCE.md','REVIEW.md','RESULT.md']:
+                  if not (task / name).is_file(): problems.append(f'active task missing: {name}')
+              if not (task / 'evidence').is_dir(): problems.append('active task missing: evidence/')
+
+          for path in root.rglob('*'):
+              if '.git' in path.parts or not path.is_file() or path.suffix not in {'.md','.json'}:
+                  continue
+              try: text = path.read_text(encoding='utf-8-sig')
+              except UnicodeDecodeError: continue
+              if re.search(r'\{\{[A-Z_]+\}\}', text): problems.append(f'unresolved placeholder: {path}')
+
+          if problems:
+              print('\n'.join(f'FAIL: {p}' for p in problems))
+              sys.exit(1)
+          print('PASS: Workline metadata and active task structure are valid')
+          PY

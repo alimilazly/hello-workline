@@ -1,7 +1,7 @@
 ﻿{
     "schema_version":  1,
     "project_status":  "active",
-    "stage":  "ready_for_execution",
+    "stage":  "ready_for_review",
     "active_task":  "TASK-0001-add-greeting-program",
     "next_task_number":  2,
     "execution":  {
@@ -11,10 +11,10 @@
                       "executor":  null
                   },
     "verification":  {
-                         "build":  "not_run",
-                         "unit_test":  "not_run",
+                         "build":  "not_applicable",
+                         "unit_test":  "not_applicable",
                          "integration_test":  "not_run",
-                         "runtime_test":  "not_run",
+                         "runtime_test":  "pass",
                          "regression_test":  "not_run",
                          "ci":  "not_run"
                      },
@@ -26,6 +26,6 @@
     "blocked":  [
 
                 ],
-    "next_action":  "Execute this task.",
-    "updated_at":  "2026-09-17T14:42:27Z"
+    "next_action":  "Review this task.",
+    "updated_at":  "2026-09-17T14:42:59Z"
 }

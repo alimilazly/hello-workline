@@ -1,11 +1,11 @@
 ﻿{
     "schema_version":  1,
     "project_status":  "active",
-    "stage":  "accepted",
-    "active_task":  "TASK-0001-add-greeting-program",
+    "stage":  "completed",
+    "active_task":  null,
     "next_task_number":  2,
     "execution":  {
-                      "branch":  "task/TASK-0001-add-greeting-program",
+                      "branch":  null,
                       "worktree_mode":  null,
                       "worktree_path":  null,
                       "executor":  null
@@ -19,13 +19,13 @@
                          "ci":  "not_run"
                      },
     "review":  {
-                   "status":  "approved",
+                   "status":  "completed",
                    "reviewer":  "framework-acceptance-simulation",
                    "pull_request":  null
                },
     "blocked":  [
 
                 ],
-    "next_action":  "Complete and merge this task.",
-    "updated_at":  "2026-09-17T14:43:19Z"
+    "next_action":  "Create or plan a task.",
+    "updated_at":  "2026-09-17T14:43:26Z"
 }

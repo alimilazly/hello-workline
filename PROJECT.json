@@ -7,7 +7,7 @@
   },
   "repository": {
     "provider": "github",
-    "remote_url": "",
+    "remote_url": "https://github.com/alimilazly/hello-workline",
     "default_branch": "main"
   },
   "workflow": {

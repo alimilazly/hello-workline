@@ -1,37 +1,43 @@
-﻿# TASK-0002-verify-github-and-antigravity-integratio — Plan
+# TASK-0002-verify-github-and-antigravity-integratio — Plan
 
 ## Task Goal
-(To be filled by Codex during planning.)
+Prove the complete hosted lifecycle for hello-workline and prove that the official Antigravity CLI can run headlessly from the project.
 
 ## Current Repository Situation
-(Analyze the repository.)
+The local project is validated and has a clean main branch. GitHub and Antigravity integrations exist locally, but the hosted lifecycle has not yet been exercised.
 
 ## Affected Components
-(List affected components.)
+- GitHub repository metadata and origin remote.
+- Task control documents and evidence.
+- STATE.json lifecycle fields.
+- GitHub Actions and main branch protection.
 
 ## Design
-(Describe the design.)
+Use a single bounded task branch. Capture Antigravity output before review, create a Draft PR from that branch, wait for the metadata workflow, enable protection, record approval, then merge through GitHub with an exact-head guard.
 
 ## Files Expected to Change
-(List files.)
+- PROJECT.json and STATE.json.
+- Task documents and evidence under this task directory.
+- Generated state summary.
 
 ## Dependencies
-(List dependencies.)
+- Official gh CLI authenticated to github.com.
+- Official agy CLI authenticated to the user's Antigravity account.
 
 ## Security Considerations
-(Note any security considerations.)
+The repository remains private. Tokens are never printed or stored in project files. Antigravity retains its normal permission policy.
 
 ## Data / Migration Considerations
-(Note data or migration impact.)
+No application data migration is required.
 
 ## Risks
-(List risks.)
+Private repository branch protection may be rejected on a GitHub Free plan. Actions or model service availability may delay validation.
 
 ## Rollback Strategy
-(Describe rollback strategy.)
+Close an unmerged PR, leave main unchanged, and document the provider error. Local task evidence remains available for diagnosis.
 
 ## Decision Points
-(List decision points.)
+Require the check context reported by the real Actions run rather than assuming a name from configuration alone.
 
 ## Required ADRs
-(List required ADRs, or state None.)
+None; this verifies an already selected integration architecture.

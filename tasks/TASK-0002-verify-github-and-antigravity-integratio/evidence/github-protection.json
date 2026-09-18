@@ -1,0 +1,11 @@
+﻿{
+  "captured_at": "2026-09-18T02:36:41.1543290Z",
+  "requested_branch": "main",
+  "required_check": "validate-metadata",
+  "outcome": "PROVIDER_LIMIT",
+  "http_status": 403,
+  "message": "Upgrade to GitHub Pro or make this repository public to enable this feature.",
+  "repository_visibility": "private",
+  "safety_decision": "Kept repository private; did not bypass or publish.",
+  "documentation_url": "https://docs.github.com/rest/branches/branch-protection#update-branch-protection"
+}

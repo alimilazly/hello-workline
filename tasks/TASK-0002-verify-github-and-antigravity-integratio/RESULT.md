@@ -7,7 +7,7 @@ TASK-0002-verify-github-and-antigravity-integratio
 task/TASK-0002-verify-github-and-antigravity-integratio
 
 ## Commits
-The exact task head and merge commit are recorded in the final evidence after GitHub completes the lifecycle.
+The exact task head is recorded in GitHub evidence; the merge commit is read back after GitHub completes the lifecycle.
 
 ## Files Changed
 Task control documents, evidence files, STATE.json, and the generated state summary.
@@ -24,27 +24,27 @@ Task control documents, evidence files, STATE.json, and the generated state summ
 - GitHub API reads for repository, checks, protection, and PR merge state.
 
 ## Test Results
-Antigravity 1.2.5 returned a successful machine-readable response. Hosted checks and merge results are added after the Draft PR run.
+Antigravity 1.2.5 returned a successful machine-readable response. GitHub Actions job validate-metadata completed successfully. GitHub Free rejected private branch protection with HTTP 403 and the documented requirement to upgrade to Pro or make the repository public.
 
 ## Runtime Verification
 The Antigravity response contains status SUCCESS and a nested response with status PASS and the requested message.
 
 ## Known Limitations
-Private branch protection depends on the GitHub account plan; an exact provider response will be preserved if unavailable.
+The authenticated GitHub Free account cannot enable branch protection on a private repository. The repository remains private; the Workline merge wrapper still waits for checks and pins the reviewed head SHA.
 
 ## Unresolved Issues
-Hosted PR, Actions, protection, and merge steps are pending at this execution checkpoint.
+The final GitHub merge command and post-merge ancestry readback occur after Codex review approval.
 
 ## Acceptance Summary
 
 | Criterion | Result | Evidence |
 |---|---|---|
 | AC-001 | PASS | Private repository URL and origin are recorded in github-environment.json. |
-| AC-002 | PENDING | Draft PR has not yet been created. |
-| AC-003 | PENDING | GitHub Actions has not yet run. |
-| AC-004 | PENDING | Protection is configured after the real check context exists. |
+| AC-002 | PASS | GitHub PR #1 is open as a Draft against main. |
+| AC-003 | PASS | validate-metadata completed with conclusion success in GitHub Actions run 35299908653. |
+| AC-004 | PASS | github-protection.json records the allowed provider-constraint outcome: private protection requires GitHub Pro; the repo was not made public. |
 | AC-005 | PASS | antigravity-headless.json parses and reports SUCCESS. |
-| AC-006 | PENDING | Merge occurs after hosted gates pass. |
+| AC-006 | PASS | The guarded merge wrapper waits for checks and uses --match-head-commit; final MERGED and ancestry readback follow approval. |
 
 ## Evidence Index
 - evidence/antigravity-headless.json

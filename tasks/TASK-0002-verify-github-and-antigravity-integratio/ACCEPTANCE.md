@@ -31,7 +31,7 @@ Expected Result: agy exits zero and emits valid JSON from a real model response.
 Required: Yes
 
 ## AC-006
-Requirement: The PR merges through GitHub only after checks pass, and local main contains the reviewed task commit.
-Verification: Read PR merged state and verify Git ancestry locally.
-Expected Result: GitHub reports MERGED and local main contains the task head.
+Requirement: The GitHub merge path waits for checks and pins the reviewed head commit before requesting merge.
+Verification: Exercise the guarded merge wrapper, then read PR merged state and verify Git ancestry locally.
+Expected Result: The wrapper accepts only a successful check set and exact head; final verification reports MERGED and local main contains the task head.
 Required: Yes

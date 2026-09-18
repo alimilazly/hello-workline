@@ -1,7 +1,7 @@
 ﻿{
   "schema_version": 1,
   "project_status": "active",
-  "stage": "executing",
+  "stage": "ready_for_review",
   "active_task": "TASK-0003-publish-repository-and-enable-branch-pro",
   "next_task_number": 4,
   "execution": {
@@ -16,14 +16,14 @@
     "integration_test": "pass",
     "runtime_test": "pass",
     "regression_test": "not_applicable",
-    "ci": "not_run"
+    "ci": "pass"
   },
   "review": {
     "status": "not_started",
     "reviewer": null,
-    "pull_request": null
+    "pull_request": "https://github.com/alimilazly/hello-workline/pull/3"
   },
   "blocked": [],
-  "next_action": "Create the protected Draft PR and wait for validate-metadata.",
-  "updated_at": "2026-09-18T03:01:05Z"
+  "next_action": "Review protected PR #3 and complete through GitHub.",
+  "updated_at": "2026-09-18T03:02:00Z"
 }

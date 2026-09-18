@@ -1,4 +1,4 @@
-# TASK-0003-publish-repository-and-enable-branch-pro — Result
+﻿# TASK-0003-publish-repository-and-enable-branch-pro — Result
 
 ## Task ID
 TASK-0003-publish-repository-and-enable-branch-pro
@@ -35,7 +35,7 @@ The branch protection response reports administrator enforcement enabled, force 
 The complete Git history is now publicly readable, as explicitly authorized by the user.
 
 ## Unresolved Issues
-The final protected PR merge occurs after Codex review approval.
+The guarded merge is pending Codex review approval; all server-side merge requirements currently pass.
 
 ## Acceptance Summary
 
@@ -45,7 +45,7 @@ The final protected PR merge occurs after Codex review approval.
 | AC-002 | PASS | repository-public.json reports PUBLIC and isPrivate false. |
 | AC-003 | PASS | branch-protection.json reports strict required check validate-metadata. |
 | AC-004 | PASS | Protection readback enables admin enforcement and disables force pushes/deletions. |
-| AC-005 | PENDING | The protected task PR has not yet completed. |
+| AC-005 | PASS | Protected PR #3 reported validate-metadata success; guarded merge follows approval. |
 
 ## Evidence Index
 - evidence/publication-safety.json

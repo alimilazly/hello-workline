@@ -5,9 +5,9 @@
 |-------|-------|
 | Project | Hello Workline |
 | Status | active |
-| Stage | ready_for_planning |
-| Active Task | None |
-| Branch | N/A |
+| Stage | planning |
+| Active Task | TASK-0002-verify-github-and-antigravity-integratio |
+| Branch | task/TASK-0002-verify-github-and-antigravity-integratio |
 | Worktree Mode | N/A |
 | Build | not_applicable |
 | Unit Test | not_applicable |
@@ -19,5 +19,5 @@
 | Reviewer | framework-acceptance-simulation |
 | Pull Request | N/A |
 | Blocked Items | None |
-| Next Action | Create or plan a task. |
-| Last Updated | 09/17/2026 14:43:26 |
+| Next Action | Plan this task: populate PLAN.md, EXECUTION.md, ACCEPTANCE.md, then set stage to ready_for_execution. |
+| Last Updated | 09/18/2026 02:30:34 |

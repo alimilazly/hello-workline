@@ -1,7 +1,7 @@
 ﻿{
   "schema_version": 1,
   "project_status": "active",
-  "stage": "ready_for_review",
+  "stage": "reviewing",
   "active_task": "TASK-0002-verify-github-and-antigravity-integratio",
   "next_task_number": 3,
   "execution": {
@@ -19,11 +19,11 @@
     "ci": "pass"
   },
   "review": {
-    "status": "not_started",
-    "reviewer": null,
+    "status": "in_progress",
+    "reviewer": "codex",
     "pull_request": "https://github.com/alimilazly/hello-workline/pull/1"
   },
   "blocked": [],
-  "next_action": "Run Codex review against PR #1 and the durable evidence.",
-  "updated_at": "2026-09-18T02:36:41Z"
+  "next_action": "Codex reviews the task diff and writes REVIEW.md.",
+  "updated_at": "2026-09-18T02:37:03Z"
 }

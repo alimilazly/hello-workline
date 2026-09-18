@@ -1,37 +1,56 @@
-﻿# TASK-0002-verify-github-and-antigravity-integratio — Result
+# TASK-0002-verify-github-and-antigravity-integratio — Result
 
 ## Task ID
 TASK-0002-verify-github-and-antigravity-integratio
 
 ## Branch
-(pending)
+task/TASK-0002-verify-github-and-antigravity-integratio
 
 ## Commits
-(pending)
+The exact task head and merge commit are recorded in the final evidence after GitHub completes the lifecycle.
 
 ## Files Changed
-(pending)
+Task control documents, evidence files, STATE.json, and the generated state summary.
 
 ## Commands Executed
-(pending)
+- Official gh authentication and repository inspection.
+- Official agy print mode with JSON output.
+- Workline task planning, validation, and execution transitions.
 
 ## Tests Executed
-(pending)
+- JSON parsing of Antigravity headless output.
+- Workline task validator at each lifecycle gate.
+- GitHub Actions metadata validation on the pull request.
+- GitHub API reads for repository, checks, protection, and PR merge state.
 
 ## Test Results
-(pending)
+Antigravity 1.2.5 returned a successful machine-readable response. Hosted checks and merge results are added after the Draft PR run.
 
 ## Runtime Verification
-(pending)
+The Antigravity response contains status SUCCESS and a nested response with status PASS and the requested message.
 
 ## Known Limitations
-(pending)
+Private branch protection depends on the GitHub account plan; an exact provider response will be preserved if unavailable.
 
 ## Unresolved Issues
-(pending)
+Hosted PR, Actions, protection, and merge steps are pending at this execution checkpoint.
 
 ## Acceptance Summary
-(pending)
+
+| Criterion | Result | Evidence |
+|---|---|---|
+| AC-001 | PASS | Private repository URL and origin are recorded in github-environment.json. |
+| AC-002 | PENDING | Draft PR has not yet been created. |
+| AC-003 | PENDING | GitHub Actions has not yet run. |
+| AC-004 | PENDING | Protection is configured after the real check context exists. |
+| AC-005 | PASS | antigravity-headless.json parses and reports SUCCESS. |
+| AC-006 | PENDING | Merge occurs after hosted gates pass. |
 
 ## Evidence Index
-(pending)
+- evidence/antigravity-headless.json
+- evidence/antigravity-headless.stderr.txt
+- evidence/github-environment.json
+- evidence/github-pr.json
+- evidence/github-checks.json
+- evidence/github-protection.json
+- evidence/github-merge.json

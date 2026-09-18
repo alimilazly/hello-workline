@@ -1,4 +1,4 @@
-﻿# TASK-0003-publish-repository-and-enable-branch-pro
+# TASK-0003-publish-repository-and-enable-branch-pro
 
 ## Task ID
 TASK-0003-publish-repository-and-enable-branch-pro
@@ -7,25 +7,29 @@ TASK-0003-publish-repository-and-enable-branch-pro
 Publish repository and enable branch protection
 
 ## Requested Outcome
-(Describe the desired outcome.)
-
-## User Context
-(Provide context about why this task is needed.)
+Apply the user's explicit decision to make the hello-workline GitHub repository public, enable enforceable protection on main, and preserve final API evidence.
 
 ## Functional Requirements
-- (List functional requirements)
+- Confirm the full Git history contains no common credential signatures before publication.
+- Change `alimilazly/hello-workline` visibility to public.
+- Protect `main` with strict `validate-metadata` checks.
+- Enforce the rule for administrators and disable force pushes and deletion.
+- Record GitHub API responses and merge this evidence through a protected pull request.
 
 ## Non-Functional Requirements
-- (List non-functional requirements)
+- Keep authentication tokens out of the repository.
+- Do not weaken required checks to complete the task.
+- Leave local and remote main synchronized and clean.
 
 ## Explicit Non-Goals
-- (List what this task should NOT do)
+- No paid GitHub plan purchase.
+- No unrelated source-code changes.
 
 ## Constraints
-- (List constraints)
+- The final evidence update must itself pass the protected PR workflow.
 
 ## User Acceptance Expectations
-- (List what the user expects to see when complete)
+- The repository is publicly readable and GitHub reports active main protection.
 
 ## Open Questions
-- (List any open questions)
+- None.

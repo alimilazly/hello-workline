@@ -1,31 +1,29 @@
 ﻿{
-    "schema_version":  1,
-    "project_status":  "active",
-    "stage":  "ready_for_planning",
-    "active_task":  null,
-    "next_task_number":  2,
-    "execution":  {
-                      "branch":  null,
-                      "worktree_mode":  null,
-                      "worktree_path":  null,
-                      "executor":  null
-                  },
-    "verification":  {
-                         "build":  "not_applicable",
-                         "unit_test":  "not_applicable",
-                         "integration_test":  "not_run",
-                         "runtime_test":  "pass",
-                         "regression_test":  "not_run",
-                         "ci":  "not_run"
-                     },
-    "review":  {
-                   "status":  "completed",
-                   "reviewer":  "framework-acceptance-simulation",
-                   "pull_request":  null
-               },
-    "blocked":  [
-
-                ],
-    "next_action":  "Create or plan a task.",
-    "updated_at":  "2026-09-17T14:43:26Z"
+  "schema_version": 1,
+  "project_status": "active",
+  "stage": "ready_for_planning",
+  "active_task": null,
+  "next_task_number": 3,
+  "execution": {
+    "branch": null,
+    "worktree_mode": null,
+    "worktree_path": null,
+    "executor": null
+  },
+  "verification": {
+    "build": "not_applicable",
+    "unit_test": "not_applicable",
+    "integration_test": "pass",
+    "runtime_test": "pass",
+    "regression_test": "not_applicable",
+    "ci": "pass"
+  },
+  "review": {
+    "status": "completed",
+    "reviewer": "codex",
+    "pull_request": "https://github.com/alimilazly/hello-workline/pull/1"
+  },
+  "blocked": [],
+  "next_action": "Create or plan a task.",
+  "updated_at": "2026-09-18T02:38:26Z"
 }

@@ -1,0 +1,1 @@
+{"conversation_id":"b3afca54-f794-4fd3-91dc-659dc01eb2a6","status":"SUCCESS","response":"{\n  \"status\": \"PASS\",\n  \"message\": \"Antigravity headless verified\"\n}\n","duration_seconds":6.657581,"num_turns":1,"usage":{"input_tokens":13133,"output_tokens":674,"thinking_tokens":651,"cache_read_tokens":0,"total_tokens":13807}}

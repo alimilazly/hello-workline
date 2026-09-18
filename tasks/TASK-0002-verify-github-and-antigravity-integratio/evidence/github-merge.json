@@ -1,0 +1,31 @@
+﻿{
+  "captured_at": "2026-09-18T02:41:46.0176738Z",
+  "pull_request": {
+    "baseRefName": "main",
+    "headRefName": "task/TASK-0002-verify-github-and-antigravity-integratio",
+    "headRefOid": "1c2e9052767b69b728aeb48fba1b066732456b23",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "47d77f77458977a23b25e92656d6f579da725f7b"
+    },
+    "mergedAt": "2026-09-18T02:40:05Z",
+    "number": 1,
+    "state": "MERGED",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-09-18T02:38:39Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/alimilazly/hello-workline/actions/runs/35300146826/job/105460888322",
+        "name": "validate-metadata",
+        "startedAt": "2026-09-18T02:38:34Z",
+        "status": "COMPLETED",
+        "workflowName": "Workline Metadata Validation"
+      }
+    ],
+    "url": "https://github.com/alimilazly/hello-workline/pull/1"
+  },
+  "local_main": "47d77f77458977a23b25e92656d6f579da725f7b",
+  "reviewed_head_contained": true,
+  "worktree_clean_before_evidence": true
+}

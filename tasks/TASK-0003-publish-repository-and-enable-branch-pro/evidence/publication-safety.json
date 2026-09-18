@@ -1,0 +1,7 @@
+{
+  "scan_time": "2026-09-18T03:01:03.7367520Z",
+  "pre_publication_head": "bd120b86535dafff4350ce8a138917ab4c25668a",
+  "commits_scanned": 21,
+  "credential_pattern_matches": 0,
+  "patterns": "GitHub tokens, AWS access keys, Google API keys, OpenAI-style keys, private-key headers, GEMINI_API_KEY and GITHUB_TOKEN assignments"
+}

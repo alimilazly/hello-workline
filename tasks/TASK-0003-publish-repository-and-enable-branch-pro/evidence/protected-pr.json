@@ -1,0 +1,22 @@
+{
+  "baseRefName": "main",
+  "headRefName": "task/TASK-0003-publish-repository-and-enable-branch-pro",
+  "headRefOid": "8d7612b5f8c5eade60b3d401cde2b8732db8a5dc",
+  "isDraft": true,
+  "mergeStateStatus": "CLEAN",
+  "number": 3,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-09-18T03:01:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/alimilazly/hello-workline/actions/runs/35301614605/job/105465239652",
+      "name": "validate-metadata",
+      "startedAt": "2026-09-18T03:01:34Z",
+      "status": "COMPLETED",
+      "workflowName": "Workline Metadata Validation"
+    }
+  ],
+  "url": "https://github.com/alimilazly/hello-workline/pull/3"
+}

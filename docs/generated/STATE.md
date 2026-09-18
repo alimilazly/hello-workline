@@ -9,15 +9,15 @@
 | Active Task | TASK-0003-publish-repository-and-enable-branch-pro |
 | Branch | task/TASK-0003-publish-repository-and-enable-branch-pro |
 | Worktree Mode | N/A |
-| Build | not_run |
-| Unit Test | not_run |
-| Integration Test | not_run |
-| Runtime Test | not_run |
-| Regression Test | not_run |
+| Build | not_applicable |
+| Unit Test | not_applicable |
+| Integration Test | pass |
+| Runtime Test | pass |
+| Regression Test | not_applicable |
 | CI | not_run |
 | Review Status | not_started |
 | Reviewer | N/A |
 | Pull Request | N/A |
 | Blocked Items | None |
-| Next Action | Execute the task using the workline-executor skill. |
-| Last Updated | 09/18/2026 03:00:16 |
+| Next Action | Create the protected Draft PR and wait for validate-metadata. |
+| Last Updated | 09/18/2026 03:01:05 |
